@@ -26,9 +26,10 @@ class file_reader():
        
 
 
-    def sumBycolum(self,sheetName, column):
-        #todo
-        pass
-        
+    def sum_by_column(self,sheetName, column):
+        self.workbook.get_sheet_by_name(sheetName)
+        print(self.workbook.get_sheet_names())
+        print(column)
+        # sum return
+        return 0
 
-``
