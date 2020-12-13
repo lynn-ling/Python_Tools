@@ -1,5 +1,12 @@
 import openpyxl
 
+class excel_reader():
+    def __init__(self):
+        pass
+
+    def file_reader(self, filePath):
+        return file_reader(filePath)
+
 
 class file_reader():
     def __init__(self, filePath):
@@ -7,16 +14,21 @@ class file_reader():
         self.workbook = openpyxl.load_workbook(filePath)
         pass
 
-    def getSheetNames(self):
+    def get_workbook(self):
         return self.workbook.get_sheet_names()
 
-    def getAllCellsBySheets(self,sheetName):
-        self.workbook.get_sheet_by_name(sheetName)
-        return 
+    def get_sheetnames(self):
+        return self.workbook.get_sheet_names()
 
-class excel_reader():
-    def __init__(self):
+
+    def sum_by_rows(self, sheetName, rows):
+        sheet = self.workbook.get_sheet_by_name(sheetName)
+       
+
+
+    def sumBycolum(self,sheetName, column):
+        #todo
         pass
+        
 
-    def file_reader(self, filePath):
-        return file_reader(filePath)
+``
