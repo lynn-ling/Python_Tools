@@ -42,6 +42,18 @@ class file_reader():
                 sum += float(cell.value)
         return sum
 
+    def sum_by_range(self,sheetName,start,end):
+        sheet = self.workbook.get_sheet_by_name(sheetName)
+        sum = 0
+        sum_range = sheet[start:end]
+        for cells in sum_range:
+            for cell in cells:
+                if cell.value != None:
+                    sum += float(cell.value) 
+        return sum
+
+
+
     def avg_by_column(self,sheetName,column):
         sheet = self.workbook.get_sheet_by_name(sheetName)
         sum = 0
