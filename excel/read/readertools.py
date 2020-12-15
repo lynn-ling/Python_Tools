@@ -110,4 +110,14 @@ class file_reader():
         return min[-1]
 
 
+    def content_cells_range(self,sheetName):
+        sheet = self.workbook.get_sheet_by_name(sheetName)
+        max_column = get_column_letter(sheet.max_column)
+        min_column = get_column_letter(sheet.min_column)
+        max_row = sheet.max_row
+        min_row = sheet.min_row
+        cells_range = str(min_column)+str(min_row)+":"+str(max_column)+str(max_row)
+        return "有内容的单元格的范围为：" + cells_range
+
+
 
