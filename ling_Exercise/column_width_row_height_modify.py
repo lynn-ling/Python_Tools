@@ -3,14 +3,24 @@ import openpyxl
 work_book = openpyxl.load_workbook("C://Users//baozipu//Desktop//sum.xlsx")
 sheet = work_book.get_sheet_by_name("合计")
 
-row_num1 = 1
-row_num2 = 5
-column_num1 = "A"
-column_num2 = "B"
 
-sheet.row_dimensions[row_num1].height = 70
-sheet.row_dimensions[row_num2].hidden = 1
-sheet.column_dimensions[column_num1].width = 20
-sheet.column_dimensions[column_num2].hidden = 0
+def row_height_modify(row,height):
+    sheet.row_dimensions[row].height = height
+
+def column_width_modify(column,width):
+    sheet.column_dimensions[column].width = width
+
+def row_hidden(row):
+    sheet.row_dimensions[row].hidden = 1
+
+def column_hidden(column):
+    sheet.column_dimensions[column].hidden = 1
+
+def row_unhidden(row):
+    sheet.row_dimensions[row].hidden = 0
+
+def column_unhidden(column):
+    sheet.column_dimensions[column].hidden = 0
+
 
 work_book.save("C://Users//baozipu//Desktop//sum.xlsx")
